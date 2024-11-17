@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Countdown</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
+    <style>
+        body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 15px;
+    padding: 0;
+    background-color: #002B5B;
+    background-size: cover;   
+    background-position: center; 
+    background-repeat: no-repeat; 
+    transition: background-image 1s ease-in-out;
+    color: white;
+        }
+
+    /* Dark overlay for background */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.384); /* Dark overlay with 50% opacity */
+    z-index: -1; 
+}
+
+
+       
+
+        .countdown {
+            display:flex;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            animation: pulse 1.5s infinite;
+        }
+        .countdown div {
+            width: 100px;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        .countdown div span {
+            font-size: 1rem;
+            font-weight: normal;
+        }
+        .countdown div p {
+            margin-top: 0.5rem;
+            margin-bottom: 30px;
+            font-size: 1rem;
+            color: #d3d3d3;
+        }
+
+        
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+      
+
+
+
+#play-music {
+  position: relative;
+  padding: 20px 35px;
+  background: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  color: #000000;
+  box-shadow: 0px 0px 10px 0px rgb(255, 255, 255);
+  border-radius: 100px;
+  border: none;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+#play-music .star-1 {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 25px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 0.8s cubic-bezier(0.05, 0.83, 0.43, 0.96);
+}
+
+#play-music .star-2 {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 0.8s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+#play-music .star-3 {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 0.8s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+#play-music .star-4 {
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  width: 8px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 0.8s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+#play-music .star-5 {
+  position: absolute;
+  top: 25%;
+  left: 45%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 0.8s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+#play-music .star-6 {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 0.8s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+#play-music:hover {
+  background: #000000;
+  color: #ffffff;
+  box-shadow: 0 0 80px #ffffff8c;
+}
+
+#play-music:hover .star-1 {
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 20px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+#play-music:hover .star-2 {
+  position: absolute;
+  top: 35%;
+  left: -25%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+#play-music:hover .star-3 {
+  position: absolute;
+  top: 80%;
+  left: -10%;
+  width: 10px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+#play-music:hover .star-4 {
+  position: absolute;
+  top: -25%;
+  left: 105%;
+  width: 20px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+#play-music:hover .star-5 {
+  position: absolute;
+  top: 30%;
+  left: 115%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+#play-music:hover .star-6 {
+  position: absolute;
+  top: 80%;
+  left: 105%;
+  width: 10px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+.fil0 {
+  fill: #fffdef;
+}
+
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(255, 99, 71, 0.5);
+  }
+}
+
+#play-music {
+  animation: pulse 1.5s infinite;
+}
+
+
+    
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  height: 10vh;
+  padding-bottom: 55px;
+}
+
+
+ 
+ .footer {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1rem;
+            text-align: center;
+            color: #fff;
+            text-decoration: none;
+            animation: bounce 1.5s infinite;
+            text-decoration: none;
+           
+        border: 2px solid #f71313;
+        border-radius: 0px;
+        transition: background-color 0.3s, color 0.3s;
+        
+        
+        }
+
+        .footer:hover {
+            color: #1d2bf2; 
+        }
+
+        /* Bounce animation for text */
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translate(-50%, 0);
+            }
+            40% {
+                transform: translate(-50%, -10px);
+            }
+            60% {
+                transform: translate(-50%, -5px);
+            }
+        }
+
+         
+        .countdown-text {
+            font-family: 'Pacifico', cursive;
+            font-size: 2rem;
+            text-align: center;
+            line-height: 5rem;
+            padding-bottom: 5rem;
+        }
+   
+
+         /* Animated Button Style */
+    .animated-button {
+        background-color: #f50808;
+        color: #fff;
+        font-size: 1rem;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: transform 0.2s;
+        animation: pulse 1.5s infinite;
+    }
+
+    .animated-button:hover {
+        transform: scale(1.1);
+    }
+
+    /* Pulse Animation */
+    @keyframes pulse {
+        0%, 100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.1);
+        }
+    }
+
+    </style>
+</head>
+<body>
+    <div>
+        
+    
+    <!-- Button to start music -->
+    <div class="button-container">
+        <button id="play-music">
+            <div class="star-1"></div>
+            <div class="star-2"></div>
+            <div class="star-3"></div>
+            <div class="star-4"></div>
+            <div class="star-5"></div>
+            <div class="star-6"></div>
+            Play Music
+          </button>
+          
+      </div>
+      
+      <div class="countdown-text">
+        Countdown <span style="color: #f50808;">to</span> Christmas
+    </div>
+        <div class="countdown" id="countdown">
+            <div>
+                <span id="days">0</span>
+                <p>Days</p>
+            </div>
+            <div>
+                <span id="hours">0</span>
+                <p>Hours</p>
+            </div>
+            <div>
+                <span id="minutes">0</span>
+                <p>Minutes</p>
+            </div>
+            <div>
+                <span id="seconds">0</span>
+                <p>Seconds</p>
+            </div>
+        </div>
+           
+        <!-- Footer with animated text -->
+    <a href="https://web.facebook.com/daniel.jamesalassa" class="footer" target="_blank" rel="noopener noreferrer">
+        👋 Say hi to the developer! 😊
+    </a>
+    
+
+       
+
+    </div>
+
+    
+
+    <!-- Audio player (hidden) -->
+    <audio id="background-audio" loop>
+        <source src="background-music.mp3" type="audio/mp3">
+        <source src="background-music.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // Reference to the play button and audio element
+        const playButton = document.getElementById('play-music');
+        const audioElement = document.getElementById('background-audio');
+        
+        // Play audio when button is clicked
+        playButton.addEventListener('click', function() {
+            audioElement.play();
+            playButton.style.display = 'none'; // Hide the button after playing
+        });
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
